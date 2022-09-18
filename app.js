@@ -9,10 +9,7 @@ const app = express();
 Port 3000 pour variable locale car process.env.PORT vaudra "undefined" en environnement dev
 En environnement prod, la variable "port" aura pour valeur celle attribuée dynamiquement par Heroku 
 */
-const server = app.listen(process.env.PORT || 5000, () => {
-  const port = server.address().port;
-  console.log(`Express is working on port ${port}`);
-});
+const port = process.env.PORT || 3000;
 
 // Middleware homemade
 /*
