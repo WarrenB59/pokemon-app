@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 });
 */
 
-// Middleware implémenté grâce au module Morgan
+// Middleware
 app
   .use(favicon(__dirname + "/assets/favicon.ico"))
   .use(bodyParser.json())
