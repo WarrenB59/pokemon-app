@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const favicon = require("serve-favicon");
 const sequelize = require("./src/db/sequelize");
+const cors = require("cors");
 
 const app = express();
 
@@ -20,7 +21,10 @@ app.use((req, res, next) => {
 */
 
 // Middleware implémenté grâce au module Morgan
-app.use(favicon(__dirname + "/assets/favicon.ico")).use(bodyParser.json());
+app
+  .use(favicon(__dirname + "/assets/favicon.ico"))
+  .use(bodyParser.json())
+  .use(cors());
 
 sequelize.initDb();
 
